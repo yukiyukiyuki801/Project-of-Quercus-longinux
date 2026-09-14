@@ -1,0 +1,11 @@
+results/
+.Rhistory
+.RData
+.Ruserdata
+__pycache__/
+*.py[cod]
+*.out
+*.err
+~$*
+.DS_Store
+Thumbs.db
