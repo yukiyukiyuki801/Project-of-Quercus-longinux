@@ -4,24 +4,24 @@ Code and available inputs for the manuscript **Postglacial expansion and
 sieving of adaptive variation contribute to speciation in a subtropical oak
 complex**.
 
-This curated repository supports:
+This repository supports:
 
-1. Gradient Forest projections using the adaptive candidate overlap or all
-   1,291 LD-pruned SNPs, plus a comparison of their predictions.
-2. Population directionality (ψ) and range-origin inference with the
+1. Genetic PCA and visualization.
+2. Gradient Forest projections using adaptive or genome-wide SNPs, plus a
+   comparison of their predictions.
+3. Population directionality (ψ) and range-origin inference with the
    `rangeExpansion` package.
-3. Exploratory Tajima's D from the filtered, LD-pruned, variant-only RAD VCF.
+4. Tajima's D from the filtered LD-pruned RAD VCF.
 
-The unfiltered VCF is intentionally not included. Incomplete working fragments
-for other analyses were also excluded rather than presented as reproducible
-code.
+The unfiltered VCF is too large to include. Please contact the authors if it is
+needed.
 
 ## Contents
 
 ```text
-180_ql.ld_prune.lfmm.csv          180 × 1,291 genotype matrix
+180_ql.ld_prune.lfmm.csv          genotype matrix
 ql_180_env_variables.csv          sample coordinates and predictors
-ql_rda_fst_overlap_outliers.csv   41 candidate loci
+ql_rda_fst_overlap_outliers.csv   candidate loci
 current_bio19/                    current climate rasters
 lgm_bio19/                        Last Glacial Maximum rasters
 mask_layer/                       habitat and background masks
@@ -29,6 +29,7 @@ data/
   ql_180_LD_prune_0.2.recode.vcf  filtered LD-pruned VCF
   sample_metadata.tsv             sample, population, variety, and coordinates
 scripts/
+  run_genetic_pca.R
   gf_workflow.R
   run_gradient_forest.R
   compare_gradient_forest.R
@@ -59,19 +60,18 @@ workflow:
 remotes::install_github("BenjaminPeter/rangeExpansion@d485202")
 ```
 
-The Quercus range-expansion wrapper was adapted from the corresponding workflow
-in the author's
-[`Phalaenopsis-parallel-adaptation`](https://github.com/yukiyukiyuki801/Phalaenopsis-parallel-adaptation)
-repository and from the upstream `rangeExpansion` example.
+## Genetic PCA
+
+Run PCA on the LD-pruned genotype matrix and plot the first two axes by variety:
+
+```bash
+Rscript scripts/run_genetic_pca.R
+```
 
 ## Gradient Forest
 
 The models use BIO01, BIO07, BIO12, BIO17, and BIO18; 500 trees by default;
 `corr.threshold = 0.50`; and the manuscript's maximum-level calculation.
-
-The candidate table has 41 loci. Twenty overlap the 1,291-SNP LD-pruned matrix,
-so the matched adaptive model contains 20 loci. The other 21 candidates were
-removed by LD pruning.
 
 ```bash
 Rscript scripts/run_gradient_forest.R adaptive
@@ -112,16 +112,6 @@ be interpreted with those limitations.
 
 ## Exploratory Tajima's D
 
-The included VCF contains 1,291 filtered and LD-pruned variant sites for 180
-individuals. It lacks invariant callable sites. Its Tajima's D values are not
-absolute genome-wide estimates and must not be used as strong demographic
-evidence; they are only exploratory relative comparisons.
-
-The genomic population assignments contain 20 kuoi, 103 longinux, and 57
-lativiolaciifolia individuals. The manuscript's 20/88/72 counts refer to the
-morphological dataset and should not be substituted for these VCF sample
-assignments.
-
 ```bash
 python3 scripts/prepare_tajima_sample_lists.py
 bash scripts/run_tajimas_d.sh
@@ -130,14 +120,3 @@ Rscript scripts/summarize_tajimas_d.R
 
 The default window is 10 kb. It can be changed with, for example,
 `WINDOW=20000 bash scripts/run_tajimas_d.sh`.
-
-## Scope
-
-This is a reproducibility package, not an archive of every exploratory command.
-STRUCTURE, SNAPPER, TreeMix, ecological niche modeling, and fastsimcoal2 are not
-included because complete manuscript-specific code and inputs were unavailable.
-The raw RAD reads remain in the public archive cited by the manuscript, and the
-unfiltered VCF is not distributed here.
-
-Exact sampling coordinates are present in `ql_180_env_variables.csv` and
-`data/sample_metadata.tsv`, consistent with the study's sampling information.

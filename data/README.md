@@ -2,14 +2,12 @@
 
 ## `ql_180_LD_prune_0.2.recode.vcf`
 
-Filtered, LD-pruned, variant-only RAD-seq VCF containing 1,291 SNPs and 180
-individuals. This is not the unfiltered VCF. Invariant callable sites are absent,
-so statistics such as Tajima's D must be interpreted only as exploratory
-relative comparisons.
+Filtered, LD-pruned RAD-seq VCF used by the included scripts. The unfiltered VCF
+is too large to include; please contact the authors if it is needed.
 
 ## `sample_metadata.tsv`
 
-Tab-delimited metadata for the same 180 VCF samples. Columns are:
+Tab-delimited metadata for the VCF samples. Columns are:
 
 - `sample_id`: exact VCF sample identifier
 - `population`: population code

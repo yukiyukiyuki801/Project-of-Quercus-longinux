@@ -3,4 +3,5 @@ raster
 rgdal
 ggplot2
 maps
+vegan
 rangeExpansion @ GitHub commit d485202ba61523dd385037539ba4157a4a2ea261
