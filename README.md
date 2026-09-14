@@ -40,8 +40,6 @@ scripts/
 run_gf_model_projection.R         compatibility entry point
 ```
 
-Generated files are written below `results/` and ignored by Git.
-
 ## Software
 
 - R 4.2 or a compatible version
@@ -104,11 +102,6 @@ all populations.
 Rscript scripts/run_range_expansion.R
 ```
 
-The inferred origin is sensitive to SNP ascertainment, allele polarization,
-population sampling, and the old package implementation. The provided matrix
-has no outgroup for ancestral-state polarization; results therefore reproduce
-the manuscript workflow as an exploratory directionality analysis and should
-be interpreted with those limitations.
 
 ## Exploratory Tajima's D
 
