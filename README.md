@@ -69,7 +69,7 @@ Rscript scripts/run_genetic_pca.R
 ## Gradient Forest
 
 The models use BIO01, BIO07, BIO12, BIO17, and BIO18; 500 trees by default;
-`corr.threshold = 0.50`; and the manuscript's maximum-level calculation.
+and the manuscript's maximum-level calculation.
 
 ```bash
 Rscript scripts/run_gradient_forest.R adaptive
