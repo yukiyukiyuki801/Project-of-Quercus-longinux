@@ -1,0 +1,2 @@
+P1	P2	P3	Dstatistic	Z-score	p-value	f4-ratio	BBAA	ABBA	BABA
+lativiolaciifolia	longinux	kuoi	0.0146691	1.0123	0.311395	0.0573085	27.7513	23.983	23.2896

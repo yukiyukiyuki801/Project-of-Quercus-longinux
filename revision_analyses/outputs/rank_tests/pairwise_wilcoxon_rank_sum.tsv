@@ -1,0 +1,13 @@
+metric	group_1	group_2	n_1	n_2	W	p_raw	p_holm
+He	kuoi	lativiolaciifolia	3	9	10	0.6	1
+He	kuoi	longinux	3	14	22	0.95294118	1
+He	lativiolaciifolia	longinux	9	14	88	0.12274468	0.36823405
+Ho	kuoi	lativiolaciifolia	3	9	12	0.86363636	0.86363636
+Ho	kuoi	longinux	3	14	30	0.3	0.6
+Ho	lativiolaciifolia	longinux	9	14	90	0.095049405	0.28514822
+FIS	kuoi	lativiolaciifolia	3	9	3	0.063636364	0.12727273
+FIS	kuoi	longinux	3	14	3	0.020588235	0.061764706
+FIS	lativiolaciifolia	longinux	9	14	49	0.39509158	0.39509158
+pi	kuoi	lativiolaciifolia	3	9	0	0.0090909091	0.018181818
+pi	kuoi	longinux	3	14	1	0.0058823529	0.017647059
+pi	lativiolaciifolia	longinux	9	14	64	0.97487315	0.97487315

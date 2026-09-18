@@ -1,0 +1,22 @@
+qseqid	arabidopsis_accession	gene_symbol	percent_identity	alignment_length	query_length	subject_length	query_coverage	evalue	bitscore	hit_description
+Qrob_P0027720.2	Q9SRT2	BHLH62	39.330	567	562	456	99	8.81e-95	296	Transcription factor bHLH62
+Qrob_P0028290.2	P92558	ND1	87.179	78	279	325	28	9.66e-40	140	NADH-ubiquinone oxidoreductase chain 1
+Qrob_P0099750.2	F4JSZ5	BIG1	51.591	440	460	1687	95	2.74e-141	442	Brefeldin A-inhibited guanine nucleotide-exchange protein 1
+Qrob_P0107380.2	Q8RXT4	NEK4	77.778	234	239	555	98	2.64e-135	390	Serine/threonine-protein kinase Nek4
+Qrob_P0133790.2	Q8GWW7	AIH	71.848	341	352	383	95	0.0	527	Agmatine deiminase
+Qrob_P0210020.2	Q7PC84	ABCG39	69.919	1486	1465	1454	99	0.0	2158	ABC transporter G family member 39
+Qrob_P0344330.2	Q9SZ66	DSC1	34.783	874	2393	1219	34	1.82e-116	401	Disease resistance-like protein DSC1
+Qrob_P0366620.2	Q94C95	ATG1A	54.673	642	629	626	97	0.0	661	Serine/threonine-protein kinase ATG1a
+Qrob_P0375060.2	Q9T096	At4g27745	78.302	106	132	106	80	4.34e-64	189	Protein yippee-like At4g27745
+Qrob_P0412190.2	Q9SJX8	MYB14	65.546	119	267	249	45	2.88e-51	167	Transcription factor MYB14
+Qrob_P0422720.2	Q9C7T7	CEPR2	58.473	956	974	977	97	0.0	1082	Receptor protein-tyrosine kinase CEPR2
+Qrob_P0462350.2	F4HZB5	NET1D	48.331	1827	1802	1733	98	0.0	1442	Protein NETWORKED 1D
+Qrob_P0470360.2	P06525	ADH1	85.714	378	381	379	99	0.0	695	Alcohol dehydrogenase class-P
+Qrob_P0492320.2	Q7PC87	ABCG34	67.550	755	725	1453	99	0.0	1045	ABC transporter G family member 34
+Qrob_P0492430.2	Q7PC87	ABCG34	68.712	1483	1455	1453	99	0.0	2102	ABC transporter G family member 34
+Qrob_P0516380.2	Q9FKM7	IAA33	61.878	181	171	171	96	1.53e-54	169	Auxin-responsive protein IAA33
+Qrob_P0523430.2	Q9LYE3	ASI1	43.210	162	398	650	38	1.80e-31	125	Protein ANTI-SILENCING 1
+Qrob_P0550610.2	P56778	psbC	98.202	445	597	473	75	0.0	890	Photosystem II CP43 reaction center protein
+Qrob_P0711840.2	Q9SYL8	At1g78640	37.500	160	218	487	70	3.44e-17	78.6	Putative B3 domain-containing protein At1g78640
+Qrob_P0740590.2	Q0WPT7	At2g41040	66.193	352	344	352	99	3.97e-164	461	Uncharacterized methyltransferase At2g41040, chloroplastic
+Qrob_P0764110.2	P92514	COX3	96.212	264	368	265	72	0.0	502	Cytochrome c oxidase subunit 3

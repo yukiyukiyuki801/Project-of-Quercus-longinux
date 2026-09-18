@@ -1,0 +1,194 @@
+{
+  "result": [
+    {
+      "description": "ABC transporters",
+      "effective_domain_size": 6154,
+      "goshv": 38942,
+      "intersection_size": 2,
+      "intersections": [
+        [
+          "KEGG"
+        ],
+        [
+          "KEGG"
+        ],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "name": "ABC transporters",
+      "native": "KEGG:02010",
+      "p_value": 0.024130977112686237,
+      "parents": [
+        "KEGG:00000"
+      ],
+      "precision": 0.4,
+      "query": "query_1",
+      "query_size": 5,
+      "recall": 0.029411764705882353,
+      "significant": true,
+      "source": "KEGG",
+      "term_size": 68,
+      "source_order": 204,
+      "group_id": 1
+    }
+  ],
+  "meta": {
+    "query_metadata": {
+      "queries": {
+        "query_1": [
+          "ABCG34",
+          "ABCG39",
+          "ADH1",
+          "AIH",
+          "ASI1",
+          "ATG1A",
+          "BHLH62",
+          "BIG1",
+          "CEPR2",
+          "COX3",
+          "DSC1",
+          "IAA33",
+          "MYB14",
+          "ND1",
+          "NEK4",
+          "NET1D",
+          "psbC"
+        ]
+      },
+      "organism": "athaliana",
+      "all_results": false,
+      "ordered": false,
+      "no_iea": false,
+      "sources": [
+        "GO:MF",
+        "GO:CC",
+        "GO:BP",
+        "KEGG"
+      ],
+      "combined": false,
+      "aresolve": {},
+      "numeric_ns": "ENTREZGENE_ACC",
+      "domain_scope": "annotated",
+      "measure_underrepresentation": false,
+      "significance_threshold_method": "g_SCS",
+      "user_threshold": 0.05,
+      "no_evidences": false,
+      "highlight": null
+    },
+    "result_metadata": {
+      "GO:MF": {
+        "domain_size": 22878,
+        "number_of_terms": 10123,
+        "threshold": 0.000408
+      },
+      "GO:CC": {
+        "domain_size": 20029,
+        "number_of_terms": 4069,
+        "threshold": 0.00065
+      },
+      "GO:BP": {
+        "domain_size": 21844,
+        "number_of_terms": 24546,
+        "threshold": 0.000131
+      },
+      "KEGG": {
+        "domain_size": 6154,
+        "number_of_terms": 586,
+        "threshold": 0.00244
+      }
+    },
+    "genes_metadata": {
+      "failed": [
+        "ND1"
+      ],
+      "ambiguous": {},
+      "duplicates": [],
+      "query": {
+        "query_1": {
+          "mapping": {
+            "ABCG34": [
+              "AT2G36380"
+            ],
+            "ABCG39": [
+              "AT1G66950"
+            ],
+            "ADH1": [
+              "AT1G77120"
+            ],
+            "AIH": [
+              "AT5G08170"
+            ],
+            "ASI1": [
+              "AT5G11470"
+            ],
+            "ATG1A": [
+              "AT3G61960"
+            ],
+            "BHLH62": [
+              "AT3G07340"
+            ],
+            "BIG1": [
+              "AT4G38200"
+            ],
+            "CEPR2": [
+              "AT1G72180"
+            ],
+            "COX3": [
+              "ATMG00730"
+            ],
+            "DSC1": [
+              "AT4G12010"
+            ],
+            "IAA33": [
+              "AT5G57420"
+            ],
+            "MYB14": [
+              "AT2G31180"
+            ],
+            "NEK4": [
+              "AT3G63280"
+            ],
+            "NET1D": [
+              "AT1G03080"
+            ],
+            "psbC": [
+              "ATCG00280"
+            ]
+          },
+          "ensgs": [
+            "AT2G36380",
+            "AT1G66950",
+            "AT1G77120",
+            "AT5G08170",
+            "AT5G11470",
+            "AT3G61960",
+            "AT3G07340",
+            "AT4G38200",
+            "AT1G72180",
+            "ATMG00730",
+            "AT4G12010",
+            "AT5G57420",
+            "AT2G31180",
+            "AT3G63280",
+            "AT1G03080",
+            "ATCG00280"
+          ]
+        }
+      }
+    },
+    "timestamp": "2026-09-17T15:32:16.837052+00:00",
+    "version": "e114_eg62_p19_27110d83"
+  }
+}

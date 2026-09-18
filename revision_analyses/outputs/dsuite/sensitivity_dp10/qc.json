@@ -1,0 +1,12 @@
+{
+  "minimum_depth": 10,
+  "outgroup_vcf_records": 1170,
+  "ingroup_sites": 1291,
+  "usable": 854,
+  "call_missing": 121,
+  "depth_below_threshold": 309,
+  "non_target_allele": 7,
+  "pm1n_reference_equals_ingroup_alt": 15,
+  "pm1n_reference_is_third_allele": 10,
+  "usable_fraction": 0.6615027110766848
+}
