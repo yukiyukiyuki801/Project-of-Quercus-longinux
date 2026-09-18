@@ -57,6 +57,12 @@ gene_annotation/                  outlier annotation and enrichment
 - Python 3.9 or newer
 - VCFtools 0.1.17 for Tajima's D
 
+Install the Python packages used by the analysis scripts with:
+
+```bash
+python3 -m pip install -r requirements-python.txt
+```
+
 `rgdal` has been retired from CRAN but is retained because it was used for the
 manuscript analysis. A frozen R environment or container is recommended for
 long-term reproduction.

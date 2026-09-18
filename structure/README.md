@@ -1,6 +1,7 @@
 # STRUCTURE and Evanno Delta K
 
-Prepare the STRUCTURE input from the LD-pruned VCF:
+Install the Python packages listed in `requirements-python.txt`, then prepare
+the STRUCTURE input from the LD-pruned VCF:
 
 ```bash
 mkdir -p structure/work
