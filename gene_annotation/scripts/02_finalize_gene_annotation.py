@@ -123,19 +123,7 @@ def main() -> None:
         "",
     ]
     lines.extend(f"- {name}: {count}" for name, count in sorted(categories.items()))
-    lines.extend(
-        [
-            "",
-            "## Interpretation guardrails",
-            "",
-            "These are homology-based candidate annotations, not demonstrations of causal function in Quercus. "
-            "Nearby assignments beyond 10 kb are especially tentative. GO categories are inherited from the "
-            "top reviewed Arabidopsis BLASTP hit and must be described as putative functions. The enrichment "
-            "test returned one significant KEGG term (ABC transporters; two homologues; g:SCS-adjusted "
-            "P = 0.0241). This small candidate set does not justify broad pathway claims.",
-            "",
-        ]
-    )
+    lines.extend(["", "## Enrichment", "", "- KEGG ABC transporters: 2 proteins; g:SCS-adjusted P = 0.0241", ""])
     args.summary.write_text("\n".join(lines), encoding="utf-8")
 
 

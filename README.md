@@ -12,9 +12,11 @@ This repository supports:
 3. Population directionality (ψ) and range-origin inference with the
    `rangeExpansion` package.
 4. Tajima's D from the filtered LD-pruned RAD VCF.
-5. Reviewer-requested revision analyses: corrected pairwise diversity tests,
-   STRUCTURE/Delta K, outgroup-inclusive SVDquartets, Dsuite D statistics, and
-   functional annotation/enrichment of shared outlier SNPs.
+5. Pairwise diversity comparisons with Holm correction.
+6. STRUCTURE runs and Evanno Delta K.
+7. SVDquartets species-tree analyses.
+8. Patterson's D analyses with Dsuite.
+9. Functional annotation and enrichment of shared outlier SNPs.
 
 The unfiltered VCF is too large to include. Please contact the authors if it is
 needed.
@@ -41,7 +43,11 @@ scripts/
   run_tajimas_d.sh
   summarize_tajimas_d.R
 run_gf_model_projection.R         compatibility entry point
-revision_analyses/                revision code, documentation, and compact outputs
+diversity_tests/                  pairwise rank-sum tests and Holm correction
+structure/                        STRUCTURE runs and Evanno Delta K
+svdquartets/                      SVDquartets species-tree analyses
+dsuite/                           outgroup preparation and Patterson's D
+gene_annotation/                  outlier annotation and enrichment
 ```
 
 ## Software
@@ -118,9 +124,22 @@ Rscript scripts/summarize_tajimas_d.R
 The default window is 10 kb. It can be changed with, for example,
 `WINDOW=20000 bash scripts/run_tajimas_d.sh`.
 
-## Revision analyses
+## Pairwise diversity tests
 
-See [`revision_analyses/README.md`](revision_analyses/README.md) for complete
-commands, software and external-input requirements, interpretation limits, and
-archived summaries for the rank-sum/Holm, STRUCTURE, SVDquartets, Dsuite, and
-functional-annotation workflows.
+See [`diversity_tests/README.md`](diversity_tests/README.md).
+
+## STRUCTURE
+
+See [`structure/README.md`](structure/README.md).
+
+## SVDquartets
+
+See [`svdquartets/README.md`](svdquartets/README.md).
+
+## Dsuite
+
+See [`dsuite/README.md`](dsuite/README.md).
+
+## Gene annotation
+
+See [`gene_annotation/README.md`](gene_annotation/README.md).

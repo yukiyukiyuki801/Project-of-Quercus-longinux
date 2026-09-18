@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create a concise, guarded summary of the variety-level Dsuite result."""
+"""Create a concise numeric summary of the variety-level Dsuite result."""
 
 from __future__ import annotations
 
@@ -28,17 +28,6 @@ def main() -> None:
     f4 = float(r["f4-ratio"])
     abba = float(r["ABBA"])
     baba = float(r["BABA"])
-    significant = p < 0.05
-    direction = (
-        f"greater allele sharing between {r['P2']} and {r['P3']} than between {r['P1']} and {r['P3']}"
-        if d > 0 else
-        f"greater allele sharing between {r['P1']} and {r['P3']} than between {r['P2']} and {r['P3']}"
-    )
-    conclusion = (
-        f"The test detects a statistically significant asymmetry consistent with {direction}."
-        if significant else
-        "The test does not detect significant asymmetric allele sharing among the three varieties."
-    )
     sensitivity_lines = ["| Minimum DH01 depth | Usable loci | D | Z | P |", "|---:|---:|---:|---:|---:|"]
     sensitivity_lines.append(
         f"| {qc['minimum_depth']} | {qc.get('usable', 0)} | {d:.4f} | {z:.3f} | {p:.4g} |"
@@ -70,17 +59,9 @@ def main() -> None:
 - Weighted site-pattern counts: ABBA = {abba:.2f}; BABA = {baba:.2f}.
 - Q. glauca genotypes passing DP >= {qc['minimum_depth']}: **{qc.get('usable', 0)} / {qc['ingroup_sites']}** ({100*qc['usable_fraction']:.1f}%).
 
-{conclusion}
-
 ## Outgroup-depth sensitivity
 
 {chr(10).join(sensitivity_lines)}
-
-The inference remains nonsignificant under stricter minimum-depth thresholds.
-
-## Interpretation limits
-
-This is an exploratory, dataset-wide sensitivity test using only the 1,291 LD-pruned, variant-only RAD SNPs retained in the published ingroup VCF. It is not a genome-wide or windowed introgression scan. The two non-kuoi varieties are not reciprocally monophyletic in SVDquartets, so asymmetry—if present—could reflect population structure, incomplete lineage sorting, reference/mapping bias, or introgression. A nonsignificant result is not proof of no historical gene flow. One RAD-seq outgroup individual and sparse informative site patterns further limit power. This result should therefore be presented as a supplementary robustness check, not as decisive evidence for or against reinforcement or species status.
 
 ## Reproducibility
 
@@ -90,7 +71,7 @@ This is an exploratory, dataset-wide sensitivity test using only the 1,291 LD-pr
 - Statistic: Dsuite Dtrios v0.5 r58, expected variety topology, 20 block-jackknife blocks.
 """
     args.output.write_text(text, encoding="utf-8")
-    print(conclusion)
+    print(f"D={d:.4f}; Z={z:.3f}; P={p:.4g}")
 
 
 if __name__ == "__main__":

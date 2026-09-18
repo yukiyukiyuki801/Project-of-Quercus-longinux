@@ -206,12 +206,6 @@ def main() -> None:
 ## Mean ancestry by named variety at K={best_k}
 
 {chr(10).join(composition_lines)}
-
-## Interpretation
-
-Evanno Delta K identifies the strongest upper level of hierarchical structure and is undefined for K=1, so it should be interpreted together with the mean log likelihoods, replicate variability, ancestry plots, geography, and biological question. The alignment here uses minimum-distance assignment of cluster columns, a reproducible analogue of the label-switching correction performed by CLUMPP. CLUMPP aligns replicate Q matrices; it does not calculate Delta K.
-
-The available VCF is a filtered, LD-pruned subset. These runs reproduce broad ancestry structure for the revision but should not be described as an independent genome-wide discovery analysis.
 """
     (args.output_dir / "README.md").write_text(readme, encoding="utf-8")
     print(f"Parsed {len(runs)} runs; maximum Delta K is K={best_delta['K']} ({best_delta['Delta_K']:.3f})")

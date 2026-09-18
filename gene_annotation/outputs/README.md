@@ -19,6 +19,6 @@
 - photosynthesis/respiration: 3
 - transcription/signaling: 5
 
-## Interpretation guardrails
+## Enrichment
 
-These are homology-based candidate annotations, not demonstrations of causal function in Quercus. Nearby assignments beyond 10 kb are especially tentative. GO categories are inherited from the top reviewed Arabidopsis BLASTP hit and must be described as putative functions. The enrichment test returned one significant KEGG term (ABC transporters; two homologues; g:SCS-adjusted P = 0.0241). This small candidate set does not justify broad pathway claims.
+- KEGG ABC transporters: 2 proteins; g:SCS-adjusted P = 0.0241

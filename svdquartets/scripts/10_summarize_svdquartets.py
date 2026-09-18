@@ -135,20 +135,12 @@ def main() -> None:
 
     support_text = f"{kuoi_support:.0f}%" if kuoi_support is not None else "not available"
     non_kuoi_monophyletic = next(x["monophyletic"] for x in variety_rows if x["variety"] == "non_kuoi_combined")
-    orientation = (
-        f"rooted on the included *Q. glauca* population tip (`{args.outgroup}`)"
-        if args.outgroup else
-        "oriented using the var. *kuoi* split for comparison"
-    )
     if args.sampling == "representatives":
         input_text = "27 individuals (one lowest-missing representative per ingroup population plus DH01), treated as 27 tips"
         method_text = "PAUP* SVDquartets, all 17,550 possible quartets, and 100 standard bootstrap replicates"
-        sampling_limit = "The one-representative sampling matches the SNAPPER design but discards within-population information."
     else:
         input_text = "181 individuals, 27 population/species tips" if args.outgroup else "180 individuals, 26 population tips"
         method_text = "PAUP* SVDquartets under the multispecies coalescent, population taxon partition, 100,000 randomly sampled lineage quartets, and 100 standard bootstrap replicates"
-        sampling_limit = "The analysis randomly samples 100,000 of the possible lineage quartets per replicate."
-    support_descriptor = "strongly supported" if kuoi_support is not None and kuoi_support >= 95 else "moderately supported"
     summary = f"""# SVDquartets result summary
 
 - Input: {input_text}, and 1,291 LD-pruned RAD SNPs.
@@ -157,16 +149,7 @@ def main() -> None:
 - Bootstrap support for the complete var. *kuoi* population clade: **{support_text}**.
 {outgroup_support_note.rstrip()}
 - The combined var. *longinux* + var. *lativiolaciifolia* group is monophyletic after rooting on *Q. glauca*: **{non_kuoi_monophyletic}**.
-- The internal pairing within var. *kuoi* is weak/moderate and should not be emphasized.
 - Var. *longinux* and var. *lativiolaciifolia* are not reciprocally monophyletic (see `svdquartets_variety_monophyly.tsv`).
-
-## Comparison with existing trees
-
-The SVDquartets tree recovers the three var. *kuoi* populations as a {support_descriptor} lineage, whereas populations assigned to var. *longinux* and var. *lativiolaciifolia* are interspersed. The rooted SVDquartets topology does **not** recover all non-kuoi populations as a clade, so it agrees with SNAPPER/TreeMix on the grouping of the three *kuoi* populations but not necessarily on their basal placement. SVDquartets estimates an unrooted topology; the displayed tree is {orientation}.
-
-## Limitations
-
-The analysis uses sparse, ascertainment-filtered RAD SNPs. {sampling_limit} Bootstrap values therefore quantify repeatability under this marker set and sampling scheme, not certainty about the complete genome history. The tree should be supplied as a supplementary robustness analysis rather than replacing SNAPPER.
 """
     (args.output_dir / "README.md").write_text(summary, encoding="utf-8")
     print(f"kuoi_monophyletic={kuoi_monophyletic}; bootstrap={kuoi_support}")

@@ -8,8 +8,6 @@
 - Weighted site-pattern counts: ABBA = 23.98; BABA = 23.29.
 - Q. glauca genotypes passing DP >= 3: **1060 / 1291** (82.1%).
 
-The test does not detect significant asymmetric allele sharing among the three varieties.
-
 ## Outgroup-depth sensitivity
 
 | Minimum DH01 depth | Usable loci | D | Z | P |
@@ -17,12 +15,6 @@ The test does not detect significant asymmetric allele sharing among the three v
 | 3 | 1060 | 0.0147 | 1.012 | 0.3114 |
 | 5 | 983 | 0.0194 | 1.316 | 0.1882 |
 | 10 | 854 | 0.0244 | 1.480 | 0.1388 |
-
-The inference remains nonsignificant under stricter minimum-depth thresholds.
-
-## Interpretation limits
-
-This is an exploratory, dataset-wide sensitivity test using only the 1,291 LD-pruned, variant-only RAD SNPs retained in the published ingroup VCF. It is not a genome-wide or windowed introgression scan. The two non-kuoi varieties are not reciprocally monophyletic in SVDquartets, so asymmetry—if present—could reflect population structure, incomplete lineage sorting, reference/mapping bias, or introgression. A nonsignificant result is not proof of no historical gene flow. One RAD-seq outgroup individual and sparse informative site patterns further limit power. This result should therefore be presented as a supplementary robustness check, not as decisive evidence for or against reinforcement or species status.
 
 ## Reproducibility
 

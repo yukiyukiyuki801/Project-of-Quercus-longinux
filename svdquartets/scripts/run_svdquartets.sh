@@ -2,10 +2,10 @@
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-analysis_dir="${repo_dir}/revision_analyses"
+analysis_dir="${repo_dir}/svdquartets"
 paup_bin="${PAUP_BIN:?Set PAUP_BIN to the PAUP* 4.0a168 executable}"
-merged_vcf="${1:-${analysis_dir}/work/dsuite/ql_180_plus_qglauca.vcf.gz}"
-work_dir="${analysis_dir}/work/svdquartets"
+merged_vcf="${1:-${repo_dir}/dsuite/work/ql_180_plus_qglauca.vcf.gz}"
+work_dir="${analysis_dir}/work/all_individuals"
 mkdir -p "${work_dir}"
 
 python3 "${analysis_dir}/scripts/05_prepare_svdquartets.py" \
@@ -36,7 +36,7 @@ python3 "${analysis_dir}/scripts/10_summarize_svdquartets.py" \
   --output-dir "${work_dir}/summary"
 
 # Sampling sensitivity matching the one-representative-per-population design.
-representative_dir="${analysis_dir}/work/svdquartets_representatives"
+representative_dir="${analysis_dir}/work/representatives"
 mkdir -p "${representative_dir}"
 python3 "${analysis_dir}/scripts/17_prepare_svdquartets_representatives.py" \
   --vcf "${merged_vcf}" \

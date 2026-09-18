@@ -2,12 +2,12 @@
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-analysis_dir="${repo_dir}/revision_analyses"
+analysis_dir="${repo_dir}/gene_annotation"
 assembly_report="${QROBUR_ASSEMBLY_REPORT:?Set QROBUR_ASSEMBLY_REPORT to the PM1N assembly report}"
 gff="${QROBUR_GFF:?Set QROBUR_GFF to the PM1N GFF3, optionally gzip-compressed}"
 proteins="${QROBUR_PROTEINS:?Set QROBUR_PROTEINS to the PM1N protein FASTA, optionally gzip-compressed}"
 arabidopsis="${ARABIDOPSIS_REVIEWED_FASTA:?Set ARABIDOPSIS_REVIEWED_FASTA to reviewed Arabidopsis UniProt FASTA}"
-work_dir="${analysis_dir}/work/gene_annotation"
+work_dir="${analysis_dir}/work"
 mkdir -p "${work_dir}"
 
 python3 "${analysis_dir}/scripts/01_annotate_outliers.py" \
