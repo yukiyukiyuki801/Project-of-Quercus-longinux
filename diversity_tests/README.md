@@ -1,14 +1,17 @@
 # Pairwise diversity tests
 
-This workflow performs two-sided Mann-Whitney/Wilcoxon rank-sum tests between
-the three varieties for He, Ho, FIS, and nucleotide diversity, then applies
-Holm correction within each metric. Install the Python packages listed in
-`requirements-python.txt`, then run:
+The analysis uses unpaired, two-sided Wilcoxon rank-sum tests from the R
+package `stats` to compare the three varieties for He, Ho, FIS, and nucleotide
+diversity. The three pairwise P values within each metric are adjusted with
+the Holm method. The core test is unchanged from the original analysis; the
+revision corrects the erroneous label "signed-rank" to "rank-sum" and adds
+the requested multiple-testing correction.
 
 ```bash
-python3 diversity_tests/scripts/verify_diversity_tests.py \
-  --input diversity_tests/data/diversity_by_population.tsv \
-  --output diversity_tests/work/pairwise_wilcoxon_rank_sum.tsv
+module load R/4.4.1-foss-2022b
+Rscript diversity_tests/scripts/pairwise_wilcoxon.R \
+  diversity_tests/data/diversity_by_population.tsv \
+  diversity_tests/work/pairwise_wilcoxon_rank_sum.tsv
 ```
 
 The archived result is in `outputs/pairwise_wilcoxon_rank_sum.tsv`.

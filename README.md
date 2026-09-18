@@ -12,7 +12,7 @@ This repository supports:
 3. Population directionality (ψ) and range-origin inference with the
    `rangeExpansion` package.
 4. Tajima's D from the filtered LD-pruned RAD VCF.
-5. Pairwise diversity comparisons with Holm correction.
+5. Pairwise Wilcoxon rank-sum comparisons with Holm correction in R.
 6. STRUCTURE runs and Evanno Delta K.
 7. SVDquartets species-tree analyses.
 8. Patterson's D analyses with Dsuite.
@@ -43,7 +43,7 @@ scripts/
   run_tajimas_d.sh
   summarize_tajimas_d.R
 run_gf_model_projection.R         compatibility entry point
-diversity_tests/                  pairwise rank-sum tests and Holm correction
+diversity_tests/                  rank-sum tests and Holm correction in R
 structure/                        STRUCTURE runs and Evanno Delta K
 svdquartets/                      SVDquartets species-tree analyses
 dsuite/                           outgroup preparation and Patterson's D
